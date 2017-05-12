@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Validation Example</title>
+</head>
+<body>
+  <h1>Enter your info!</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <form action='/process' method='POST'>
+    <p>Name:<input type="text" name="name"><p>
+    <p>Dojo Location:<input type="text" name="location"><p>
+    <p>Favorite Language:<input type="text" name="language"><p>
+    <p>Comments:<input type="textarea" name="comments"><p>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
