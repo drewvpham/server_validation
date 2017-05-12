@@ -7,16 +7,17 @@
   <h1>Enter your info!</h1>
   {% with messages = get_flashed_messages() %}
     {% if messages %}
-      {% for message in messages %}
+      {% for message in messages[0] %}
         <p>{{message}}</p>
       {% endfor %}
     {% endif %}
   {% endwith %}
   <form action='/process' method='POST'>
-    <p>Name:<input type="text" name="name"><p>
-    <p>Dojo Location:<input type="text" name="location"><p>
-    <p>Favorite Language:<input type="text" name="language"><p>
-    <p>Comments:<input type="textarea" name="comments"><p>
+    <p>Email:<input type="text" name="email"><p>
+    <p>First Name:<input type="text" name="first_name"><p>
+    <p>Last Name:<input type="text" name="last_name"><p>
+    <p>Password:<input type="text" name="password"><p>
+    <p>Confirm Password:<input type="text" name="confirm_password"><p>
     <input type="submit" value="Submit">
   </form>
 </body>
